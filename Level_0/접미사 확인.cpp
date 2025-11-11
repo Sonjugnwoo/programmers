@@ -24,8 +24,8 @@ int SuffixFind(string my_string, string is_suffix) {
 }
 
 int main() {
-	string my_string = { "banana" };
-	string is_suffix = { "ana" };
+	string my_string =  "banana";
+	string is_suffix =  "ana" ;
 
 	int result = SuffixFind(my_string, is_suffix);
 

@@ -15,7 +15,7 @@ string ReverseString(string my_string, int s, int e) {
 
 
 int main() {
-	string my_string = { "Progra21Sremm3" };
+	string my_string =  "Progra21Sremm3" ;
 	int s = 6;
 	int e = 12;
 

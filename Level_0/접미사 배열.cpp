@@ -18,7 +18,7 @@ vector<string> SuffixArr(const string &my_string) {
 ;}
 
 int main() {
-	string my_string = { "banana" };
+	string my_string =  "banana" ;
 
 	vector<string> str = SuffixArr(my_string);
 

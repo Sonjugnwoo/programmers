@@ -17,7 +17,7 @@ string BehindString(string my_string, int n) {
 
 
 int main() {
-	string my_string = { "ProgrammerS123" };
+	string my_string =  "ProgrammerS123" ;
 	int n = 11;
 
 	string result = BehindString(my_string, n);

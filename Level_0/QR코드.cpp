@@ -23,7 +23,7 @@ int main() {
 	int q = 3;
 	int r = 1;
 
-	string code = { "qjnwezgrpirldywt" };
+	string code =  "qjnwezgrpirldywt" ;
 
 	string result = QRcode(q, r, code);
 

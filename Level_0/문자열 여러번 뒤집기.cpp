@@ -21,7 +21,7 @@ string Reverse(string my_string, vector<vector<int>> queries) {
 
 
 int main() {
-	string my_string = { "rermgorpsam" };
+	string my_string =  "rermgorpsam" ;
 	vector<vector<int>> queries = { {2,3},{0,7},{5,9},{6,10 } };
 
 	string str = Reverse(my_string, queries);
