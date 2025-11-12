@@ -21,7 +21,7 @@
     <ClCompile Include="9로 나눈 나머지.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="배열만들기.cpp">
+    <ClCompile Include="배열 만들기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="부분 문자열 이어 붙여 문자열 만들기.cpp">
@@ -58,6 +58,24 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="카운트 다운.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="가까운 1찾기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="리스트 자르기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="배열 만들기3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="첫 번째로 나오는 음수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2의 영역.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="배열 조각하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
