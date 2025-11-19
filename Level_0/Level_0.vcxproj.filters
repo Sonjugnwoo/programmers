@@ -135,5 +135,8 @@
     <ClCompile Include="A 강조하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="특정한 문자를 대문자로 바꾸기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
