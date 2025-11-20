@@ -24,7 +24,25 @@
     <ClCompile Include="ad 제거하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="공백으로 구분하기 1.cpp">
+    <ClCompile Include="공백으로 구분하기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="x 사이의 개수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="문자열 잘라서 정렬하기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="간단한 식 계산하기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="문자열 바꿔서 찾기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="rny_string.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="세 개의 구분자.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

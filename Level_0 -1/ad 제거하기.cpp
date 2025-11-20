@@ -23,7 +23,6 @@ int main() {
 
 	vector<string> str_arr = { "and","notad","abcd" };
 
-
 	auto result = RemoveAD(str_arr);
 
 	for (auto p : result)
