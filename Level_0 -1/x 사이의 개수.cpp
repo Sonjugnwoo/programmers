@@ -27,7 +27,6 @@ int main() {
 
     string str_arr = "oxooxoxxox";
 
-
     auto result = BetweenX(str_arr);
 
     for (auto p : result)

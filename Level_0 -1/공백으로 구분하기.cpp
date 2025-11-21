@@ -21,7 +21,6 @@ int main() {
 
 	string str_arr = "i love you";
 
-
 	auto result = SpaceSeparator(str_arr);
 
 	for (auto p : result)

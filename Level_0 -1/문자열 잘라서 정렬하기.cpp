@@ -36,7 +36,6 @@ int main() {
 
     string str_arr = "axxbxx";
 
-
     auto result = CutString(str_arr);
 
     for (auto p : result)
