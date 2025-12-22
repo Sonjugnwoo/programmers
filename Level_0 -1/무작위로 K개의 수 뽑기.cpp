@@ -22,7 +22,6 @@ vector<int> ChoiceK(vector<int>& arr,int k ) {
     while (result.size() < k) {
         result.push_back(-1);
     }
-
     return result;
 }
 int main() {
@@ -30,7 +29,7 @@ int main() {
     vector<int> arr = { 0, 1, 1, 1, 1 };
     int k = 4;
 
-    auto result = ChoiceK(arr,k);
+    auto result = ChoiceK(arr, k);
 
     for (auto p : result)
         cout << p << " ";
