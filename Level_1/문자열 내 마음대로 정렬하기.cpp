@@ -6,7 +6,7 @@
 
 using namespace std;
 // 문자열 벡터를 n번째 문자 기준으로 오름차순 정렬
-vector<string> solution(vector<string> strings, int n) {
+vector<string> sortByNthCharacter(vector<string> strings, int n) {
 
     // sort: 사용자 정의 비교자(lambda)를 이용한 정렬
     sort(strings.begin(), strings.end(),
@@ -30,7 +30,7 @@ int main() {
 
     int n = 2;
 
-    auto result = solution(strings, n);
+    auto result = sortByNthCharacter(strings, n);
 
     for (auto p : result)
         cout << p << " ";
