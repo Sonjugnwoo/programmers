@@ -26,7 +26,6 @@ int main() {
     vector<int> absolutes = { 4,7,12};
     vector<bool> signs = { true,false,true };
 
-
     auto result = calculateSignedSum(absolutes, signs);
 
     cout << result << endl;
