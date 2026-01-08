@@ -10,7 +10,7 @@ int craneGame(vector<vector<int>> board, vector<int> moves) {
     stack<int> basket;    // 바구니(인형 저장소)
 
     for (auto m : moves) {   // 크레인 이동 순서대로 처리
-        for (int i =0; i < board.size(); i++) {
+        for (int i = 0; i < board.size(); i++) {
             if (board[i][m - 1] == 0) // 해당 열이 비었으면 다음 행으로 이동
                 continue;
             else {
@@ -18,29 +18,27 @@ int craneGame(vector<vector<int>> board, vector<int> moves) {
                 basket.push(board[i][m - 1]);
                 board[i][m - 1] = 0; // 뽑힌 자리 비움
                 break;               // 한 번 뽑았으면 다음 move로 넘어감          
-        }
-
-        // 바구니에 인형이 두 개 이상 있을 때만 비교
-        if(basket.size() >=2){
-            // 서로 다르면 다시 넣어줌 (순서 유지)
-            int a = basket.top();
-            basket.pop();
-            int b = basket.top();
-            basket.pop();
-
-            if (a != b) {
-                basket.push(b);
-                basket.push(a);
             }
-            else
-                result += 2;      // 같으면 둘 다 제거되고 점수 +2
+
+            // 바구니에 인형이 두 개 이상 있을 때만 비교
+            if (basket.size() >= 2) {
+                // 서로 다르면 다시 넣어줌 (순서 유지)
+                int a = basket.top();
+                basket.pop();
+                int b = basket.top();
+                basket.pop();
+
+                if (a != b) {
+                    basket.push(b);
+                    basket.push(a);
+                }
+                else
+                    result += 2;      // 같으면 둘 다 제거되고 점수 +2
+            }
         }
     }
-
-
     return result;
 }
-
 
 int main() {
     vector<vector<int>> board = { 
