@@ -21,5 +21,17 @@
     <ClCompile Include="옹알이 (2).cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="콜라 문제.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="삼총사.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="숫자 짝꿍.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="최소직사각형.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
