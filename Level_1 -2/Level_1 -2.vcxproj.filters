@@ -57,5 +57,20 @@
     <ClCompile Include="로또의 최고 순위와 최저 순위.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="크기가 작은 부분문자열.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="개인정보 수집 유효기간.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="둘만의 암호.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="카드 뭉치.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="대충 만든 자판.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

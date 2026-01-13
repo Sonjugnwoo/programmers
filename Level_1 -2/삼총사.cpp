@@ -5,11 +5,10 @@
 
 using namespace std;
 
-int solution(vector<int> number) {
+int countZeroSumTriplets(vector<int> number) {
     int answer = 0;
     int len = number.size();
-    //sort(number.begin(), number.end());
-
+   
     for (int i = 0; i < len; i++) {
         for (int j = i + 1; j < len; j++) {
             int sum = number[i] + number[j];
@@ -28,7 +27,7 @@ int main() {
 
     vector<int> number = { -3, -2, -1, 0, 1, 2, 3 };
 
-    auto result = solution(number);
+    auto result = countZeroSumTriplets(number);
 
     cout << result << endl;
 }
