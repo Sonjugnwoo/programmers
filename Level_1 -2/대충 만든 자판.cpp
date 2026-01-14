@@ -5,41 +5,44 @@
 
 using namespace std;
 
-vector<int> solution(vector<string> keymap, vector<string> targets) {
+vector<int> getMinKeyPresses(vector<string> keymap, vector<string> targets) {
     vector<int> answer;
-    vector<pair<int, char>> key_path;
-    for (int i = 0; i < keymap.size(); i++) {
-        for (int j = 0; j < keymap[i].size(); j++) {
-            key_path.push_back(make_pair(j, keymap[i][j]));
+
+    vector<int> min_press(26, 101);        // A~Z 최소 누름 횟수 배열 (101=키 없음 플래그)
+
+  // 1단계: 각 알파벳의 모든 keymap 중 최소 누름 횟수 계산
+    for (const auto& p : keymap) {         // 각 자판 행 순회
+        for (int j = 0; j < p.size(); j++) {  // 각 행의 문자 위치 순회
+            int idx = p[j] - 'A';            // 문자 → 배열 인덱스 변환 (A=0, B=1, ...)
+            min_press[idx] = min(min_press[idx], j + 1);  // 최소값 갱신
         }
     }
 
-    for (auto ch : targets) {
-        int sum = 0; 
-        for (auto ta : ch) {
-            auto pos = find_if(key_path.begin(), key_path.end(), [=](const pair<int, char>& p) {return p.second == ta; });
-            auto rpos = find_if(key_path.rbegin(), key_path.rend(), [=](const pair<int, char>& p) {return p.second == ta; });
+    // 2단계: 각 targets 문자열 처리
+    for (const string& ch : targets) {     // 각 목표 문자열 순회
+        int sum = 0;                       // 누름 횟수 합계
+        bool ok = true;                    // 입력 가능 여부 플래그
 
-
-            if (pos->first > rpos->first) sum += rpos->first + 1;
-            else if (pos->first < rpos->first)   sum += pos->first + 1;
-            else if (pos == key_path.end() && rpos == key_path.rend()) sum = -1;
-            else    sum += pos->first + 1;
-                
+        for (char ta : ch) {               // 문자열 내 각 문자 순회
+            int idx = ta - 'A';            // 문자 → 배열 인덱스 변환
+            if (min_press[idx] == 101) {   // 해당 키가 keymap에 없음
+                ok = false;                // 입력 불가능 표시
+                break;                     // 루프 종료
+            }
+            sum += min_press[idx];         // 누름 횟수 누적
         }
-        answer.push_back(sum);
+        answer.push_back(ok ? sum : -1);   // 가능:true→sum, 불가능:-1
     }
-
-
+    return answer;
     return answer;
 }
 
 
 int main() {
-    vector<string> keymap = { "ABACD", "BCEFD" };
-    vector<string> targets = { "ABCD","AABB" };
+    vector<string> keymap = { "AA"};
+    vector<string> targets = { "B" };
 
-    auto result = solution(keymap, targets);
+    auto result = getMinKeyPresses(keymap, targets);
 
     for (auto p : result)
         cout << p << " ";

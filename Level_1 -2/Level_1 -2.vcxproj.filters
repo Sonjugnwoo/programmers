@@ -72,5 +72,14 @@
     <ClCompile Include="대충 만든 자판.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="덧칠하기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="바탕화면 정리.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="공원 산책.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
