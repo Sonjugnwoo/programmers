@@ -93,5 +93,17 @@
     <ClCompile Include="이웃한 칸.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="붕대 감기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="지폐 접기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="공원.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="동영상 재생기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
