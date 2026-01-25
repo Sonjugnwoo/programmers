@@ -4,42 +4,63 @@
 
 using namespace std;
 
-string solution(string video_len, string pos, string op_start, string op_end, vector<string> commands) {
-    string answer = "";
-    
-    int op_start_int = stoi(op_start.substr(0, 2) + op_start.substr(3));
-    int op_end_int = stoi(op_end.substr(0, 2) + op_end.substr(3));
-    int pos_int = stoi(pos.substr(0, 2) + pos.substr(3));
-    cout << op_start_int << endl;
-    cout << op_end_int << endl;
-    cout << pos_int << endl;
+// MM:SS 형식 문자열을 초 단위 정수로 변환
+int convertToSeconds(string& t) {
+    int m = stoi(t.substr(0, 2));
+    int s = stoi(t.substr(3, 2));
+    return m * 60 + s;
+}
 
-    if (pos_int > op_start_int && pos_int < op_end_int)
-        pos_int = op_end_int;
+// 초 단위 정수를 MM:SS 형식 문자열로 변환
+string formatToTimeString(int current) {
+    string time ="";
 
-    cout << pos_int<<endl;
+    int h = current / 60;
+    int m = current % 60;
 
-    for (string com : commands) {
-        com == "next" ? pos_int += 10 : pos_int -= 10;
-        cout << pos_int<<endl;
+    time += to_string(h / 10) + to_string(h % 10);
+    time += ":";
+    time += to_string(m / 10) + to_string(m % 10);
+
+    return time;
+}
+// 동영상 재생기 시뮬레이션 메인 로직
+string videoPlayerSolution(string video_len, string pos, string op_start, string op_end, vector<string> commands) {
+
+    int video = convertToSeconds(video_len);
+    int current = convertToSeconds(pos);
+    int op_s = convertToSeconds(op_start);
+    int op_e = convertToSeconds(op_end);
+
+    // 각 명령어 처리
+    for (const auto& cmd : commands) {
+        // 1. 현재 위치가 오프닝 구간이면 오프닝 끝으로 스킵
+        if (current >= op_s && current < op_e) current = op_e;
+
+        // 2. 명령어에 따른 이동
+        if (cmd == "next") {                // 다음으로 10초 이동 (영상 끝 경계 체크)
+            current += 10;
+            if (current > video) current = video;
+        }
+        if (cmd == "prev") {                // 이전으로 10초 이동 (영상 처음 경계 체크)
+            current -= 10;
+            if (current < 0) current = 0;
+        }
     }
-    if (pos_int > op_start_int && pos_int < op_end_int)
-        pos_int = op_end_int;
-    cout << pos_int<< endl;
+    // 모든 명령 처리 후 최종 오프닝 체크
+    if (current >= op_s && current < op_e) current = op_e;
 
-    answer = to_string(pos_int);
-    answer.insert(2, ":");
-    return answer;
+    return formatToTimeString(current);
 }
 
 int main() {
-    string video_len = "07:22";
-    string pos = "04:05";
+    string video_len = "10:55";
+    string pos = "00:05";
     string op_start = "00:15";
-    string op_end = "04:07";
-    vector<string> commands = { "next", "prev" };
+    string op_end = "06:55";
+    vector<string> commands = { "prev","next","next" };
 
-    auto result = solution(video_len,pos,op_start,op_end,commands);
+    auto result = videoPlayerSolution(video_len,pos,op_start,op_end,commands);
 
     cout << result << endl;
 }
